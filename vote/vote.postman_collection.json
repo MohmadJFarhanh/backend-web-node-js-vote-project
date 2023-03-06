@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "f65dcb62-77a6-40bb-ac88-1736834ad553",
+		"name": "vote",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "VOTE",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "sign in",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"mohmad@gmail.com\",\r\n    \"password\" : \"001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/v1/auth/signin",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "sign up",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\" : \"mohmad\",\r\n    \"email\" : \"mohmad@gmail.com\",\r\n    \"password\" : \"001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/v1/auth/addUser",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"addUser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "recover account",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"mohmad@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/v1/auth/recoverAccount",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"recoverAccount"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "recover account check code",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"code\" : \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/v1/auth/recoverAccount/mohmad@gmail.com",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"recoverAccount",
+										"mohmad@gmail.com"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "recover account set new password",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "profile pic",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "profile picutre",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "delete user",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "post",
+					"item": [
+						{
+							"name": "creare posts",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "key__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MDRmZjEyN2M5OTBmZjM4MDkzZTM3YiIsImlhdCI6MTY3ODA1MDQyM30.GAkt3zR6Mls32oIqmXVMe47Rt11hWEHr214cn8XC1n4",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "images",
+											"type": "file",
+											"src": [
+												"/C:/Users/mohma/OneDrive/الصور/images/javaScript-function - Copy.jpg",
+												"/C:/Users/mohma/OneDrive/الصور/images/318449171_199854519275802_1778399342977544449_n - Copy.jpg",
+												"/C:/Users/mohma/OneDrive/الصور/images/318465454_3332601296952976_8756194182650013952_n - Copy.jpg"
+											]
+										},
+										{
+											"key": "title",
+											"value": "this is post one",
+											"type": "default"
+										},
+										{
+											"key": "caption",
+											"value": "this is caption for post one",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/api/v1/post/createpost",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"post",
+										"createpost"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "apear posts",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "like button",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "unlike",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "comment",
+					"item": [
+						{
+							"name": "insert comment",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
